@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* :root {
+  --theme-color: #844FBA;
+  --title-color: #222222;
+  --section-color: #F2F2F7;
+  --theme-font: 'Inter', sans-serif;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  font-family: var(--theme-font);
+}
+
+
+/* h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  color: var(--title-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+  padding-left: 0px ;
+}
+
+button {
+  border: 0px;
+  background: #EFAE43;
+} */
