@@ -28,7 +28,7 @@ export default function Header() {
             <div className="hidden md:block">
               <Navigation desktop />
             </div>
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 xl:gap-6 items-center">
               <SelectLanguage />
               <button>
                 <img src={people} alt="" />
