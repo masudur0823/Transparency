@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <ul>
             <li>
-              <Link to="/aboutus" className="text-base font-semibold">
+              <Link to="/aboutus" className="text-base font-semibold ">
                 About Us
               </Link>
             </li>

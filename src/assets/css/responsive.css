@@ -1,0 +1,42 @@
+@media only screen and (max-width: 1279px) {
+    .slider_img {
+        height: 280px;
+    }
+
+    .thumb .slider_img {
+        height: 58px;
+    }
+}
+
+
+@media only screen and (max-width: 1023px) {
+    .slider_img {
+        height: 200px;
+    }
+
+    .thumb .slider_img {
+        height: 40px;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .thumbs .alice-carousel__stage-item {
+        width: 93px !important;
+        padding-right: 5px;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    .slider_img {
+        height: 150px;
+    }
+
+}
+
+@media only screen and (max-width: 355px) {
+    .slider_img {
+        height: 120px;
+    }
+
+}
