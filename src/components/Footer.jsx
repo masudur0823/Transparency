@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo_white.svg";
+import fcaebook from "../assets/images/icons/Facebook.svg";
+import LinkedIN from "../assets/images/icons/LinkedIN.svg";
 
 export default function Footer() {
   return (
-    <div style={{ background: "#7B5618" }} className="pt-14 pb-12 text-white">
-      <div className="container mx-auto">
+    <div style={{ background: "#7B5618" }} className="pt-10 md:pt-14 pb-8 md:pb-12 text-white">
+      <div className="container mx-auto px-4">
         {/* part1 */}
-        <div className="pb-16">
-          <img src={logo} alt="" className="w-24 lg:w-auto" />
+        <div className="pb-6 md:pb-16">
+          <img src={logo} alt="" className="w-48 lg:w-auto" />
         </div>
         {/* part2 */}
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <ul>
             <li>
               <Link to="/aboutus" className="text-base font-semibold">
@@ -44,15 +46,34 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <a href="#!" className="btn_text_color p-4 bg-white rounded-full inline-block">Share your feedback</a>
+              <a
+                href="#!"
+                className="btn_text_color p-4 bg-white rounded-full inline-block"
+              >
+                Share your feedback
+              </a>
             </li>
           </ul>
         </div>
         <div className="border-t my-10"></div>
         {/* part3 */}
+        <div className="flex justify-center lg:justify-end">
+          <div className="flex gap-4 items-center mb-3 lg:-mb-14">
+            <p>Follow us</p>
+            <a href="#!">
+              <img src={fcaebook} alt="fcaebook" />
+            </a>
+            <a href="#!">
+              <img src={LinkedIN} alt="LinkedIN" />
+            </a>
+          </div>
+        </div>
         <div className="text-center">
-          <p>Copyright 2022 Transparency. All rights reserved . Transparency confidential</p>
-          <p className="mt-2">©2022 Transparency ® Global Inc.</p>
+          <p className="text-sm lg:text-base">
+            Copyright 2022 Transparency. All rights reserved . Transparency
+            confidential
+          </p>
+          <p className="text-xs lg:text-base mt-2">©2022 Transparency ® Global Inc.</p>
         </div>
       </div>
     </div>
