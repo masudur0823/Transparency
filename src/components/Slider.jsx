@@ -99,8 +99,8 @@ export default function Slider() {
           </SwiperSlide>
         </Swiper>
       </div>
-      <button onClick={() => swiperRef.current.slidePrev()}>prev</button>
-      <button onClick={() => swiperRef.current.slideNext()}>next</button>
+      {/* <button onClick={() => swiperRef.current.slidePrev()}>prev</button>
+      <button onClick={() => swiperRef.current.slideNext()}>next</button> */}
     </>
   );
 }
