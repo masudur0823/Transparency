@@ -4,9 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
+        my_grey: "#F0F0F0",
         my_orange: "#EFAE43",
         my_black: "#222222",
         placeholder: "#CFCFCF",
+        textarea_placeholder:"#BFBFBF"
       },
     },
   },

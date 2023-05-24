@@ -2,6 +2,8 @@ import { useState } from "react";
 import ImageSlider from "../components/ImageSlider";
 import SectionHeader from "../components/SectionHeader";
 import SectionMainLayout from "../components/SectionMainLayout";
+import TextEditor from "../components/TextEditor";
+import imageUpload from "../assets/images/icons/imageUpload.svg";
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -55,10 +57,54 @@ export default function Home() {
             <p className="text-my_orange cursor-pointer">Add New Description</p>
           </div>
 
-          <div className={activeIndex === 0 ? "flex" : "hidden"}>1</div>
-          <div className={activeIndex === 1 ? "flex" : "hidden"}>2</div>
+          <div className={activeIndex === 0 ? "block" : "hidden"}>
+            <div className=" gap-4">
+              <TextEditor />
+              <div>
+                <UploadImgae />
+                <div>option list</div>
+              </div>
+            </div>
+          </div>
+          <div className={activeIndex === 1 ? "block" : "hidden"}>2</div>
         </div>
       </SectionMainLayout>
+    </>
+  );
+}
+
+function UploadImgae() {
+  const [image, setImage] = useState(null);
+  return (
+    <>
+      <div className="border-2 border-dashed p-4 h-2/3 rounded-xl">
+        {!image && (
+          <div className="h-full flex items-center justify-center  overflow-hidden relative">
+            <div className="text-center">
+              <img src={imageUpload} className="m-auto" alt="" />
+              <p style={{ color: "#828282" }} className="text-sm mt-2">
+                Drop your images or
+              </p>
+              <p className="text-blue-600 text-sm">click to browse</p>
+            </div>
+            <input
+              type="file"
+              accept="image/png, image/jpeg"
+              onChange={(event) => setImage(event.target.files[0])}
+              className="absolute w-full h-full opacity-0 cursor-pointer"
+            />
+          </div>
+        )}
+        {image && (
+          <div className="h-full flex items-center justify-center rounded-xl overflow-hidden relative">
+          <img
+            src={image ? URL.createObjectURL(image) : ""}
+            alt={""}
+            className="w-full h-42 object-fill rounded-xl"
+          />
+          </div>
+        )}
+      </div>
     </>
   );
 }
