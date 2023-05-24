@@ -17,12 +17,12 @@ function TextEditor() {
   const handleMsgEdit = () => {};
   const handleShre = () => {};
   return (
-    <div id="textarea" className="bg-my_grey pt-8 pb-2 px-8 rounded-xl">
+    <div id="textarea" className="bg-my_grey pt-3 md:pt-8 pb-3 px-3 lg:px-5 xl:px-8 rounded-xl">
       <textarea
         name="w3review"
         // rows={4}
         // cols={30}
-        className="bg-transparent resize-none text-area border w-full h-72 "
+        className="bg-transparent resize-none text-area w-full h-36 md:h-72 "
         placeholder="Fill in car information transparently below."
         value={text}
         onChange={(e) => setText(e.target.value)}

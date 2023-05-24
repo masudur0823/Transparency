@@ -24,8 +24,19 @@
         width: 93px !important;
         padding-right: 5px;
     }
+
 }
 
+@media only screen and (max-width: 767px) {
+    .text-area::placeholder {
+        position: relative;
+        white-space: initial;
+        left: 0;
+        top: 0;
+        transform: translate(0,0);
+    }
+    
+}
 
 @media only screen and (max-width: 500px) {
     .slider_img {
