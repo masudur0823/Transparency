@@ -23,6 +23,7 @@
     object-fit: cover;
     user-select: none !important;
     border-radius: 0px;
+    padding: 0px 5px;
 }
 
 .thumbs {
@@ -34,7 +35,7 @@
     width: 150px !important;
     max-height: 85px;
     /* margin-right: 15px; */
-    padding-right: 15px;
+    /* padding-right: 15px; */
     cursor: pointer;
 }
 

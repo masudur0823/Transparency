@@ -16,6 +16,7 @@ import CharacteristicsValues from "../components/CharacteristicsValues";
 import GeneralCondition from "../components/GeneralCondition";
 import OtherInformation from "../components/OtherInformation";
 import MyDescription from "../components/MyDescription";
+import OptionListSlider from "../components/OptionListSlider";
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -100,8 +101,9 @@ export default function Home() {
               <TextEditor />
               <div className="flex flex-col gap-3">
                 <UploadImgae />
-                <div className="bg-my_grey p-2 rounded-xl h-1/3">
+                <div className="bg-my_grey p-2 rounded-xl h-1/3 overflow-hidden">
                   <p className="font-medium">Option List</p>
+                  <OptionListSlider/>
                 </div>
               </div>
             </div>
@@ -206,12 +208,24 @@ function UploadImgae() {
           </div>
         )}
         {image && (
-          <div className="h-full flex items-center justify-center rounded-xl overflow-hidden relative">
-            <img
-              src={image ? URL.createObjectURL(image) : ""}
-              alt={""}
-              className="w-full h-48 object-cover rounded-xl"
-            />
+          <div className="h-full flex flex-col items-start justify-center">
+            <div className="w-full rounded-xl overflow-hidden relative">
+              <img
+                src={image ? URL.createObjectURL(image) : ""}
+                alt={""}
+                className="w-full h-32 md:h-48 object-cover rounded-xl"
+              />
+            </div>
+            <div className="mt-4 bg-my_grey5 p-3 rounded-2xl w-full">
+              <div className="flex justify-between text-my_black font-semibold">
+                <p>Mercedes Class A</p>
+                <p>25000 $</p>
+              </div>
+              <div className="flex justify-between text-my_black">
+                <p>17000km</p>
+                <p>Location : Paris</p>
+              </div>
+            </div>
           </div>
         )}
       </div>

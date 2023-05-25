@@ -11,7 +11,7 @@ import Login from "../pages/Login";
 export default function Router() {
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
+      <Route path="login" element={<Login />} />
       <Route path="/" element={<Layouts />}>
         <Route path="/" element={<Home />} />
         <Route path="aboutus" element={<WhyChooseUs />} />

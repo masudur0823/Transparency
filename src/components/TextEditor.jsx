@@ -22,7 +22,7 @@ function TextEditor() {
         name="w3review"
         // rows={4}
         // cols={30}
-        className="bg-transparent resize-none text-area w-full h-36 md:h-72 "
+        className="bg-transparent resize-none text-area w-full h-36 md:h-96 "
         placeholder="Fill in car information transparently below."
         value={text}
         onChange={(e) => setText(e.target.value)}

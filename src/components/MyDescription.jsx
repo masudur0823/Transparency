@@ -59,8 +59,8 @@ function MyDescription() {
               <p>{item.price} $</p>
             </div>
             <div className="flex justify-between text-my_black">
-              <p>{item.speed}</p>
-              <p>{item.location} $</p>
+              <p>{item.speed} km</p>
+              <p>Location: {item.location}</p>
             </div>
           </div>
         </div>

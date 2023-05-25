@@ -14,6 +14,7 @@ export default {
         my_grey5:"#EFEFEF",
         my_grey6:"#D9D7D7",
         my_grey7:"#CDCDCD",
+        my_grey8:"#E2E2E2",
         my_orange: "#EFAE43",
         my_black: "#222222",
         my_black2: "#3F3F3F",
