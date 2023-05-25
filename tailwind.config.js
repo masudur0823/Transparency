@@ -6,6 +6,7 @@ export default {
       colors: {
         my_light_yellow: "#FFF5D9",
         yellow:'#F2C94C',
+        yellow2:'#EAC43D',
         my_grey: "#F0F0F0",
         my_grey2:"#F2F2F2",
         my_grey3:"#B8B8B8",
@@ -24,7 +25,8 @@ export default {
         my_light_text:"#777777",
       },
       height:{
-        "120":"30rem"
+        "120":"30rem",
+        "122":"32rem"
       },
       width:{
         "120":"30rem"
