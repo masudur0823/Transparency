@@ -11,6 +11,7 @@ import health_white from "../assets/images/icons/health_white.svg";
 import info_b from "../assets/images/icons/infocircle_black.svg";
 import info_w from "../assets/images/icons/infocircle_w.svg";
 import eye_b from "../assets/images/icons//eye_black.svg";
+import CharacteristicsValues from "../components/CharacteristicsValues";
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -87,13 +88,13 @@ export default function Home() {
       <SectionMainLayout bg_color="bg-my_light_yellow">
         <div className="container mx-auto px-4">
           {/* tabs start */}
-          <div className="flex justify-between">
-            <div className="flex items-center gap-3">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3">
+            <div className="flex flex-col md:flex-row items-center gap-3">
               <span
                 className={
                   activeIndex1 === 0
-                    ? "font-medium text-white bg-my_black2 p-5 rounded-lg cursor-pointer flex gap-2 whitespace-nowrap"
-                    : "font-medium text-my_black3 bg-white p-5 rounded-lg cursor-pointer flex gap-2 whitespace-nowrap"
+                    ? "w-full font-medium text-white bg-my_black2 p-5 rounded-lg cursor-pointer flex gap-2 whitespace-nowrap"
+                    : "w-full font-medium text-my_black3 bg-white p-5 rounded-lg cursor-pointer flex gap-2 whitespace-nowrap"
                 }
                 onClick={() => handleIndex1(0)}
               >
@@ -106,8 +107,8 @@ export default function Home() {
               <span
                 className={
                   activeIndex1 === 1
-                    ? "font-medium text-white bg-my_black2 p-5 rounded-lg cursor-pointer flex gap-2 whitespace-nowrap"
-                    : "font-medium text-my_black3 bg-white p-5 rounded-lg cursor-pointer flex gap-2 whitespace-nowrap"
+                    ? "w-full font-medium text-white bg-my_black2 p-5 rounded-lg cursor-pointer flex gap-2 whitespace-nowrap"
+                    : "w-full font-medium text-my_black3 bg-white p-5 rounded-lg cursor-pointer flex gap-2 whitespace-nowrap"
                 }
                 onClick={() => handleIndex1(1)}
               >
@@ -120,8 +121,8 @@ export default function Home() {
               <span
                 className={
                   activeIndex1 === 2
-                    ? "font-medium text-white bg-my_black2 p-5 rounded-lg cursor-pointer flex gap-2 whitespace-nowrap"
-                    : "font-medium text-my_black3 bg-white p-5 rounded-lg cursor-pointer flex gap-2 whitespace-nowrap"
+                    ? "w-full font-medium text-white bg-my_black2 p-5 rounded-lg cursor-pointer flex gap-2 whitespace-nowrap"
+                    : "w-full font-medium text-my_black3 bg-white p-5 rounded-lg cursor-pointer flex gap-2 whitespace-nowrap"
                 }
                 onClick={() => handleIndex1(2)}
               >
@@ -134,6 +135,34 @@ export default function Home() {
             </span>
           </div>
           {/* tabs end */}
+          <div
+            className={
+              activeIndex1 === 0
+                ? "block"
+                : "hidden"
+            }
+          >
+            <CharacteristicsValues />
+            
+          </div>
+          <div
+            className={
+              activeIndex1 === 1
+                ? "block p-4 bg-white mt-8 rounded-lg"
+                : "hidden"
+            }
+          >
+            tab value2
+          </div>
+          <div
+            className={
+              activeIndex1 === 2
+                ? "block p-4 bg-white mt-8 rounded-lg"
+                : "hidden"
+            }
+          >
+            tab value3
+          </div>
         </div>
       </SectionMainLayout>
     </>
@@ -167,7 +196,7 @@ function UploadImgae() {
             <img
               src={image ? URL.createObjectURL(image) : ""}
               alt={""}
-              className="w-full h-42 object-fill rounded-xl"
+              className="w-full h-48 object-cover rounded-xl"
             />
           </div>
         )}
