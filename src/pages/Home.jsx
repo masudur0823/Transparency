@@ -10,8 +10,12 @@ import health_black from "../assets/images/icons/health_black.svg";
 import health_white from "../assets/images/icons/health_white.svg";
 import info_b from "../assets/images/icons/infocircle_black.svg";
 import info_w from "../assets/images/icons/infocircle_w.svg";
-import eye_b from "../assets/images/icons//eye_black.svg";
+import eye_b from "../assets/images/icons/eye_black.svg";
+import search from "../assets/images/icons/search.svg";
 import CharacteristicsValues from "../components/CharacteristicsValues";
+import GeneralCondition from "../components/GeneralCondition";
+import OtherInformation from "../components/OtherInformation";
+import MyDescription from "../components/MyDescription";
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -45,29 +49,50 @@ export default function Home() {
           <SectionHeader title="Fill in your car details" />
 
           <div className="flex flex-col sm:flex-row gap-4 justify-between my-3 md:my-5">
-            <div className="flex gap-3 md:gap-8 font-medium">
-              <p
-                onClick={() => handleIndex(0)}
-                className={
-                  activeIndex === 0
-                    ? "text-base text-my_black cursor-pointer relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:bg-my_orange"
-                    : "text-base text-placeholder cursor-pointer"
-                }
-              >
-                Home
-              </p>
-              <p
-                onClick={() => handleIndex(1)}
-                className={
-                  activeIndex === 1
-                    ? "text-base text-my_black cursor-pointer relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:bg-my_orange"
-                    : "text-base text-placeholder cursor-pointer"
-                }
-              >
-                My Description
-              </p>
+            <div className="flex flex-col md:flex-row gap-4 items-start">
+              <div className="flex gap-3 md:gap-8 font-medium">
+                <p
+                  onClick={() => handleIndex(0)}
+                  className={
+                    activeIndex === 0
+                      ? "text-base text-my_black cursor-pointer relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:bg-my_orange"
+                      : "text-base text-placeholder cursor-pointer"
+                  }
+                >
+                  Home
+                </p>
+                <p
+                  onClick={() => handleIndex(1)}
+                  className={
+                    activeIndex === 1
+                      ? "text-base text-my_black cursor-pointer relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:bg-my_orange"
+                      : "text-base text-placeholder cursor-pointer"
+                  }
+                >
+                  My Description
+                </p>
+              </div>
+              {activeIndex === 1 && (
+                <div className="relative">
+                  <input
+                    placeholder="Search"
+                    type="text"
+                    className="bg-my_grey2 py-2 ps-10 pr-5 rounded-full"
+                  />
+                  <img
+                    src={search}
+                    className="absolute left-2 top-1/2 -translate-y-1/2"
+                    alt="search"
+                  />
+                </div>
+              )}
             </div>
-            <p className="text-my_orange cursor-pointer">Add New Description</p>
+            <p
+              className="text-my_orange cursor-pointer"
+              onClick={() => handleIndex(0)}
+            >
+              Add New Description
+            </p>
           </div>
 
           <div className={activeIndex === 0 ? "block" : "hidden"}>
@@ -81,7 +106,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className={activeIndex === 1 ? "block" : "hidden"}>2</div>
+          <div className={activeIndex === 1 ? "block" : "hidden"}>
+            <MyDescription />
+          </div>
         </div>
       </SectionMainLayout>
 
@@ -135,24 +162,11 @@ export default function Home() {
             </span>
           </div>
           {/* tabs end */}
-          <div
-            className={
-              activeIndex1 === 0
-                ? "block"
-                : "hidden"
-            }
-          >
+          <div className={activeIndex1 === 0 ? "block" : "hidden"}>
             <CharacteristicsValues />
-            
           </div>
-          <div
-            className={
-              activeIndex1 === 1
-                ? "block p-4 bg-white mt-8 rounded-lg"
-                : "hidden"
-            }
-          >
-            tab value2
+          <div className={activeIndex1 === 1 ? "block" : "hidden"}>
+            <GeneralCondition />
           </div>
           <div
             className={
@@ -161,7 +175,7 @@ export default function Home() {
                 : "hidden"
             }
           >
-            tab value3
+            <OtherInformation />
           </div>
         </div>
       </SectionMainLayout>

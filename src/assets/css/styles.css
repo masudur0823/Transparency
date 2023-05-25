@@ -56,3 +56,15 @@
 
 /* ------------------------------- */
 /* text-area css end here */
+
+/* phone input css start here */
+/* ------------------------------- */
+/* .react-tel-input .flag-dropdown{
+    bottom: 27px !important;
+} */
+.react-tel-input .form-control {
+    width: 18.4rem !important;
+}
+
+/* ------------------------------- */
+/* phone input css end here */
