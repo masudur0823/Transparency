@@ -5,11 +5,16 @@ import LinkedIN from "../assets/images/icons/LinkedIN.svg";
 
 export default function Footer() {
   return (
-    <div style={{ background: "#7B5618" }} className="pt-10 md:pt-14 pb-8 md:pb-12 text-white">
+    <div
+      style={{ background: "#7B5618" }}
+      className="pt-10 md:pt-14 pb-8 md:pb-12 text-white"
+    >
       <div className="container mx-auto px-4">
         {/* part1 */}
         <div className="pb-6 md:pb-16">
-          <img src={logo} alt="" className="w-48 lg:w-auto" />
+          <Link to="/">
+            <img src={logo} alt="" className="w-48 lg:w-auto" />
+          </Link>
         </div>
         {/* part2 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -73,7 +78,9 @@ export default function Footer() {
             Copyright 2022 Transparency. All rights reserved . Transparency
             confidential
           </p>
-          <p className="text-xs lg:text-base mt-2">©2022 Transparency ® Global Inc.</p>
+          <p className="text-xs lg:text-base mt-2">
+            ©2022 Transparency ® Global Inc.
+          </p>
         </div>
       </div>
     </div>

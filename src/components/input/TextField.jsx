@@ -12,8 +12,8 @@ function TextField({
   return (
     <div className={` ${login ? "mt-2" : "flex"} items-center justify-start gap-3 md:gap-5`}>
       {icon && (
-        <div className="h-7 md:h-10 w-7 md:w-10 bg-my_grey2 flex justify-center items-center rounded-full p-2">
-          <img src={icon} alt="" className="w-full" />
+        <div className="h-7 md:h-10 w-7 md:w-10 bg-my_grey2 flex justify-center items-center rounded-full p-2 md:p-2.5">
+          <img src={icon} alt="" className="w-full h-full" />
         </div>
       )}
       <div className={`flex flex-col gap-2`}>

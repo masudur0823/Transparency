@@ -3,6 +3,8 @@ import img from "../assets/images/why_choose_banner.jpeg";
 import SectionMainLayout from "../components/SectionMainLayout";
 import SectionHeader from "../components/SectionHeader";
 import clock from "../assets/images/icons/clock_yellow.svg";
+import car from "../assets/images/icons/smartcar-yellow.svg";
+import pro from "../assets/images/icons/profile2user.svg";
 
 export default function WhyChooseUs() {
   const chooseList = [
@@ -12,12 +14,12 @@ export default function WhyChooseUs() {
       desc: "You regularly post your ads on the website ads",
     },
     {
-      img: clock,
+      img: car,
       title: "Description : precision",
       desc: "You're always thinking about how you're going to write when it comes to selling.",
     },
     {
-      img: clock,
+      img: pro,
       title: "Convince: decision",
       desc: "Your ads are easier to capture in the minds of your potential buyers.",
     },

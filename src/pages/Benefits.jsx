@@ -2,27 +2,30 @@ import Banner from "../components/Banner";
 import img from "../assets/images/benefits_banner.jpeg";
 import SectionMainLayout from "../components/SectionMainLayout";
 import SectionHeader from "../components/SectionHeader";
-import clock from "../assets/images/icons/clock_yellow.svg";
+import messagequestion from "../assets/images/icons/messagequestion.svg";
+import eye from "../assets/images/icons/eye-yellow.svg";
+import flashcircle from "../assets/images/icons/flashcircle-yellow.svg";
+import searchnormal1 from "../assets/images/icons/searchnormal1-yellow.svg";
 
 export default function Benefits() {
   const chooseList = [
     {
-      img: clock,
+      img: messagequestion,
       title: "Curiosity",
       desc: "No more confusion in the minds of potential buyers.",
     },
     {
-      img: clock,
+      img: eye,
       title: "Clearness",
       desc: "Clear, organized, and streamlined description of your car.",
     },
     {
-      img: clock,
+      img: flashcircle,
       title: "Brevity",
       desc: "Without unnecessary frills/extras.",
     },
     {
-      img: clock,
+      img: searchnormal1,
       title: "Transparency",
       desc: "Justified and accurate description according to the information provided.",
     },

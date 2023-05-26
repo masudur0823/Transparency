@@ -58,13 +58,13 @@ function OptionListSlider() {
           src={leftArrow}
           alt=""
           onClick={slidePrev}
-          className=" cursor-pointer w-10 h-10 absolute left-0 top-10"
+          className=" cursor-pointer w-7 sm:w-10 h-7 sm:h-10 absolute left-0 top-3"
         />
         <img
           src={rightArrow}
           alt=""
           onClick={slideNext}
-          className=" cursor-pointer  w-10 h-10 absolute right-0 top-0"
+          className=" cursor-pointer  w-7 sm:w-10 h-7 sm:h-10 absolute right-0 top-3"
         />
       
     </div>

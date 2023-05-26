@@ -6,58 +6,109 @@ import img5 from "../assets/images/seat.png";
 import img6 from "../assets/images/tires.png";
 import img7 from "../assets/images/brake-disc.png";
 import Button from "./Button";
+import { useState } from "react";
 function GeneralCondition() {
+  const [value, setValue] = useState("");
+  const [activeText, setActiveText] = useState("Monteur");
+
+  const handleClick = (text) => {
+    setActiveText(activeText === text ? null : text);
+    setValue(text);
+  };
+
   const handleSubmit = () => {
-    alert("hi");
+    alert(value);
   };
   return (
     <>
       <div className=" p-4 bg-white mt-8 rounded-lg">
         <div className="w-60 md:w-120 h-60 md:h-120 rounded-full border border-dashed mx-auto m-10 relative">
           <div className="absolute -top-7 md:-top-10 left-1/2 -translate-x-1/2">
-            <div className="cursor-pointer">
+            <button
+              disabled={activeText === "Suspension" ? true : false}
+              className={
+                activeText === "Suspension" ? "opacity-100" : "opacity-30"
+              }
+              onClick={() => handleClick("Suspension")}
+            >
               <img className="m-auto w-1/2 md:w-auto" src={img1} alt="" />
-              <p className="font-medium text-xs md:text-base">Suspension</p>
-            </div>
+              <p className={`font-medium text-xs md:text-base ${activeText === "Suspension" ? "border-s-4  border-yellow" : ""} ps-2`}>Suspension</p>
+            </button>
           </div>
           <div className="absolute top-[10%] md:top-[18%] -left-2 md:-left-6">
-            <div className="cursor-pointer">
+            <button
+              disabled={activeText === "Monteur" ? true : false}
+              className={
+                activeText === "Monteur" ? "opacity-100" : "opacity-30"
+              }
+              onClick={() => handleClick("Monteur")}
+            >
               <img className="m-auto w-1/2 md:w-auto" src={img2} alt="" />
-              <p className="font-medium text-xs md:text-base">Monteur</p>
-            </div>
+              <p className={`font-medium text-xs md:text-base ${activeText === "Monteur" ? "border-s-4  border-yellow" : ""} ps-2`}>Monteur</p>
+            </button>
           </div>
           <div className="absolute top-[10%] md:top-[18%] -right-2 md:-right-6">
-            <div className="cursor-pointer">
+            <button
+              disabled={activeText === "Transmission" ? true : false}
+              className={
+                activeText === "Transmission" ? "opacity-100" : "opacity-30"
+              }
+              onClick={() => handleClick("Transmission")}
+            >
               <img className="m-auto w-1/2 md:w-auto" src={img3} alt="" />
-              <p className="font-medium text-xs md:text-base">Transmission</p>
-            </div>
+              <p className={`font-medium text-xs md:text-base ${activeText === "Transmission" ? "border-s-4  border-yellow" : ""} ps-2`}>Transmission</p>
+            </button>
           </div>
           <div className="absolute top-[50%] -left-6 md:-left-10">
-            <div className="cursor-pointer">
+            <button
+              disabled={activeText === "Exterieur" ? true : false}
+              className={
+                activeText === "Exterieur" ? "opacity-100" : "opacity-30"
+              }
+              onClick={() => handleClick("Exterieur")}
+            >
               <img className="m-auto w-1/2 md:w-auto" src={img4} alt="" />
-              <p className="font-medium text-xs md:text-base">Exterieur</p>
-            </div>
+              <p className={`font-medium text-xs md:text-base ${activeText === "Exterieur" ? "border-s-4  border-yellow" : ""} ps-2`}>Exterieur</p>
+            </button>
           </div>
           <div className="absolute top-[50%] -right-6 md:-right-10">
-            <div className="cursor-pointer">
+            <button
+              disabled={activeText === "Interieur" ? true : false}
+              className={
+                activeText === "Interieur" ? "opacity-100" : "opacity-30"
+              }
+              onClick={() => handleClick("Interieur")}
+            >
               <img className="m-auto w-1/2 md:w-auto" src={img5} alt="" />
-              <p className="font-medium text-xs md:text-base">Interieur</p>
-            </div>
+              <p className={`font-medium text-xs md:text-base ${activeText === "Interieur" ? "border-s-4  border-yellow" : ""} ps-2`}>Interieur</p>
+            </button>
           </div>
           <div className="absolute top-[80%] left-5 md:left-10">
-            <div className="cursor-pointer">
+            <button
+              disabled={activeText === "Pneus" ? true : false}
+              className={
+                activeText === "Pneus" ? "opacity-100" : "opacity-30"
+              }
+              onClick={() => handleClick("Pneus")}
+            >
               <img className="m-auto w-1/2 md:w-auto" src={img6} alt="" />
-              <p className="font-medium text-xs md:text-base">Pneus</p>
-            </div>
+              <p className={`font-medium text-xs md:text-base ${activeText === "Pneus" ? "border-s-4  border-yellow" : ""} ps-2`}>Pneus</p>
+            </button>
           </div>
           <div className="absolute top-[80%] right-5 md:right-10">
-            <div className="cursor-pointer">
+            <button
+              disabled={activeText === "Friens" ? true : false}
+              className={
+                activeText === "Friens" ? "opacity-100" : "opacity-30"
+              }
+              onClick={() => handleClick("Friens")}
+            >
               <img className="m-auto w-1/2 md:w-auto" src={img7} alt="" />
-              <p className="font-medium text-xs md:text-base">Friens</p>
-            </div>
+              <p className={`font-medium text-xs md:text-base ${activeText === "Friens" ? "border-s-4  border-yellow" : ""} ps-2`}>Friens</p>
+            </button>
           </div>
           {/* middle */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-semibold">
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xs md:text-base whitespace-nowrap font-semibold">
             <p className="text-my_grey4">Vibration</p>
             <p className="flex items-center gap-2">
               Demarrage Facile{" "}

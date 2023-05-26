@@ -101,8 +101,8 @@ export default function Home() {
               <TextEditor />
               <div className="flex flex-col gap-3">
                 <UploadImgae />
-                <div className="bg-my_grey p-2 rounded-xl h-1/3 overflow-hidden">
-                  <p className="font-medium">Option List</p>
+                <div className="bg-my_grey p-2 rounded-xl h-44 lg:h-1/3 overflow-hidden">
+                  <p className="font-medium mb-4">Option List</p>
                   <OptionListSlider/>
                 </div>
               </div>
