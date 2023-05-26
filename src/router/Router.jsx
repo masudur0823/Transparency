@@ -5,7 +5,7 @@ import WhyChooseUs from "../pages/WhyChooseUs";
 import Benefits from "../pages/Benefits";
 import Faqs from "../pages/Faqs";
 import HowItWorks from "../pages/HowItWorks";
-import Connects from "../pages/Connects";
+// import Connects from "../pages/Connects";
 import Login from "../pages/Login";
 
 export default function Router() {
@@ -18,7 +18,7 @@ export default function Router() {
         <Route path="benefits" element={<Benefits />} />
         <Route path="faqs" element={<Faqs />} />
         <Route path="howitworks" element={<HowItWorks />} />
-        <Route path="connect" element={<Connects />} />
+        <Route path="connect" element={<Home />} />
       </Route>
     </Routes>
   );
