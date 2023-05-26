@@ -24,7 +24,7 @@ export default function Header() {
           <div className="flex justify-between w-48 md:w-full ">
             <div
               style={{ top: show }}
-              className={`block md:hidden absolute md:relative right-4 md:right-0 top-11 md:top-0 bg-white md:bg-none shadow md:shadow-none p-3 md:p-0 rounded`}
+              className={`z-50 block md:hidden absolute md:relative right-4 md:right-0 top-11 md:top-0 bg-white md:bg-none shadow md:shadow-none p-3 md:p-0 rounded`}
             >
               <Navigation setshow={setShow} mobile />
             </div>

@@ -100,7 +100,7 @@ export default function Home() {
             <div className="grid grid-cols-[1fr] lg:grid-cols-[7fr_5fr] gap-4">
               <TextEditor />
               <div className="flex flex-col gap-3">
-                <UploadImgae />
+                <UploadImage />
                 <div className="bg-my_grey p-2 rounded-xl h-44 lg:h-1/3 overflow-hidden">
                   <p className="font-medium mb-4">Option List</p>
                   <OptionListSlider/>
@@ -185,7 +185,7 @@ export default function Home() {
   );
 }
 
-function UploadImgae() {
+function UploadImage() {
   const [image, setImage] = useState(null);
   return (
     <>

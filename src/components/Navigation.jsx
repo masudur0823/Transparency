@@ -27,7 +27,7 @@ export default function Navigation({ setshow, mobile }) {
   return (
     <>
       {!mobile && (
-        <ul className={`flex gap-1 flex-col md:flex-row`}>
+      <ul className={`flex gap-1 flex-col md:flex-row`}>
           {menuList.map((item, index) => (
             <NavLink
               to={item.path}

@@ -7,6 +7,7 @@ export default {
         my_light_yellow: "#FFF5D9",
         yellow:'#F2C94C',
         yellow2:'#EAC43D',
+        yellow3:' rgba(239, 174, 67, 0.08)',
         my_grey: "#F0F0F0",
         my_grey2:"#F2F2F2",
         my_grey3:"#B8B8B8",
