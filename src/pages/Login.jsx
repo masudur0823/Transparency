@@ -31,7 +31,7 @@ function Login() {
                   Creer un compte
                 </a>{" "}
               </p>
-              <button className="px-12 py-3 bg-white text-yellow rounded-md font-semibold w-full">
+              <button className="px-12 py-3 bg-white text-yellow rounded-md font-semibold w-full whitespace-normal sm:whitespace-nowrap">
                 Je suis un professionel
               </button>
             </div>
