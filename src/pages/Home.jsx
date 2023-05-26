@@ -21,6 +21,7 @@ import OptionListSlider from "../components/OptionListSlider";
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeIndex1, setActiveIndex1] = useState(0);
+  const [searchText, setSearchText] = useState("")
   const handleIndex = (index) => {
     setActiveIndex(index);
   };
@@ -79,6 +80,8 @@ export default function Home() {
                     placeholder="Search"
                     type="text"
                     className="bg-my_grey2 py-2 ps-10 pr-5 rounded-full"
+                    value={searchText}
+                    onChange={(e)=>setSearchText(e.target.value)}
                   />
                   <img
                     src={search}
@@ -109,7 +112,7 @@ export default function Home() {
             </div>
           </div>
           <div className={activeIndex === 1 ? "block" : "hidden"}>
-            <MyDescription />
+            <MyDescription filterSearch={searchText} />
           </div>
         </div>
       </SectionMainLayout>
