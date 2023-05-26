@@ -6,7 +6,7 @@ export default function HowItWorks() {
       <div>
         <SectionMainLayout>
           <SectionHeader title="How it works" />
-          <div className="container mx-auto mt-10">
+          <div className="container mx-auto mt-4 md:mt-10">
             <img src={img1} alt="" className="w-full" />
           </div>
         </SectionMainLayout>
