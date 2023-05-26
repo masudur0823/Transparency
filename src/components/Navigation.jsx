@@ -8,19 +8,19 @@ export default function Navigation({ setshow, mobile }) {
     },
     {
       title: "Benefits",
-      path: "benefits",
+      path: "/benefits",
     },
     {
       title: "FAQs",
-      path: "faqs",
+      path: "/faqs",
     },
     {
       title: "How it works",
-      path: "howitworks",
+      path: "/howitworks",
     },
     {
       title: "Connect",
-      path: "connect",
+      path: "/connect",
     },
   ];
 
