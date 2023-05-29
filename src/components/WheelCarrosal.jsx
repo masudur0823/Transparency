@@ -20,7 +20,7 @@ export default function WheelCarrosal({ slides, setActiveIndex }) {
   };
   return (
     <div className="inline-block relative">
-      <div className="h-18 overflow-hidden">
+      <div className="h-9 md:h-18 overflow-hidden">
         <Swiper
           onSlideChange={(v) => {
             setActiveIndex(v.activeIndex);
@@ -32,7 +32,7 @@ export default function WheelCarrosal({ slides, setActiveIndex }) {
           // loop={true}
           mousewheel={true}
           modules={[Mousewheel]}
-          className="mySwiper mt-6 h-6 overflow-visible"
+          className="mySwiper mt-3 md:mt-6 h-3 md:h-6 overflow-visible"
           onSwiper={(s) => {
             setSwiper(s);
           }}
@@ -45,15 +45,15 @@ export default function WheelCarrosal({ slides, setActiveIndex }) {
         </Swiper>
       </div>
 
-      <div className="flex flex-col gap-2 absolute top-1/2 -left-6 -translate-y-1/2">
+      <div className="flex flex-col gap-1 md:gap-2 absolute top-1/2 -left-6 -translate-y-1/2">
         <button onClick={prevto}>
-          <img src={up} alt="" />
+          <img src={up} className="w-75 md:w-auto" alt="" />
         </button>
         <button onClick={nexto}>
-          <img src={down} alt="" />
+          <img src={down} className="w-75 md:w-auto" alt="" />
         </button>
       </div>
-      <div className="absolute top-1/2 -right-6 -translate-y-1/2 w-4 h-4 bg-yellow rounded-full outline outline-2 outline-black border-2 border-white"></div>
+      <div className="absolute top-1/2 -right-6 -translate-y-1/2 w-3 md:w-4 h-3 md:h-4 bg-yellow rounded-full outline outline-2 outline-black border-2 border-white"></div>
     </div>
   );
 }

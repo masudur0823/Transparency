@@ -20,21 +20,21 @@ function OtherInformation() {
           onChange={(e) => setPrix(e.target.value)}
           type="number"
           icon={money1}
-          label="Prix"
+          label="Price"
         />
         <TextField
           value={prix}
           onChange={(e) => setPrix(e.target.value)}
           type="number"
           icon={money1}
-          label="Prix"
+          label="Previous Owner(s)"
         />
         <TextField
           value={prix}
           onChange={(e) => setPrix(e.target.value)}
           type="number"
           icon={money1}
-          label="Prix"
+          label="Location"
         />
 
         <CustomPhoneInput
@@ -48,14 +48,14 @@ function OtherInformation() {
           onChange={(e) => setPrix(e.target.value)}
           type="number"
           icon={money1}
-          label="Prix"
+          label="Warranty Coverage"
         />
         <TextField
           value={prix}
           onChange={(e) => setPrix(e.target.value)}
           type="number"
           icon={money1}
-          label="Prix"
+          label="Vehicle Inspection"
         />
       </div>
       <div className="mt-3 md:mt-8">

@@ -8,7 +8,7 @@ function Select({ label, icon, children, value, onChange }) {
         <label htmlFor={label} className="text-my_light_text text-sm">
           {label}
         </label>
-        <select name="" id="" value={value} onChange={onChange} className="text-my_black font-semibold" >
+        <select name="" id="" value={value} onChange={onChange} className="text-my_black font-semibold w-44" >
             {children}
         </select>
       </div>

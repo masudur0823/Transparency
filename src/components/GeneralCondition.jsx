@@ -15,7 +15,15 @@ import {
   outsideList,
   outsideDesc,
   tiresList,
-  tiresDesc
+  tiresDesc,
+  transmissionList,
+  transmissionDesc,
+  insideList,
+  insideDesc,
+  suspensionList,
+  suspensionDesc,
+  brakesList,
+  brakesDesc
 } from "../data/GeneralConditions";
 
 function GeneralCondition() {
@@ -42,6 +50,22 @@ function GeneralCondition() {
     if (activeText === "Tires") {
       setTitle(tiresList);
       setDesc(tiresDesc);
+    }
+    if (activeText === "Transmission") {
+      setTitle(transmissionList);
+      setDesc(transmissionDesc);
+    }
+    if (activeText === "Inside") {
+      setTitle(insideList);
+      setDesc(insideDesc);
+    }
+    if (activeText === "Suspension") {
+      setTitle(suspensionList);
+      setDesc(suspensionDesc);
+    }
+    if (activeText === "Brakes") {
+      setTitle(brakesList);
+      setDesc(brakesDesc);
     }
   }, [activeText]);
 
@@ -136,19 +160,19 @@ function GeneralCondition() {
           </div>
           <div className="absolute top-[50%] -right-6 md:-right-10">
             <button
-              disabled={activeText === "Interieur" ? true : false}
+              disabled={activeText === "Inside" ? true : false}
               className={
-                activeText === "Interieur" ? "opacity-100" : "opacity-30"
+                activeText === "Inside" ? "opacity-100" : "opacity-30"
               }
-              onClick={() => handleClick("Interieur")}
+              onClick={() => handleClick("Inside")}
             >
               <img className="m-auto w-1/2 md:w-auto" src={img5} alt="" />
               <p
                 className={`font-medium text-xs md:text-base ${
-                  activeText === "Interieur" ? "border-s-4  border-yellow" : ""
+                  activeText === "Inside" ? "border-s-4  border-yellow" : ""
                 } ps-2`}
               >
-                Interieur
+                Inside
               </p>
             </button>
           </div>
@@ -170,22 +194,22 @@ function GeneralCondition() {
           </div>
           <div className="absolute top-[80%] right-5 md:right-10">
             <button
-              disabled={activeText === "Friens" ? true : false}
-              className={activeText === "Friens" ? "opacity-100" : "opacity-30"}
-              onClick={() => handleClick("Friens")}
+              disabled={activeText === "Brakes" ? true : false}
+              className={activeText === "Brakes" ? "opacity-100" : "opacity-30"}
+              onClick={() => handleClick("Brakes")}
             >
               <img className="m-auto w-1/2 md:w-auto" src={img7} alt="" />
               <p
                 className={`font-medium text-xs md:text-base ${
-                  activeText === "Friens" ? "border-s-4  border-yellow" : ""
+                  activeText === "Brakes" ? "border-s-4  border-yellow" : ""
                 } ps-2`}
               >
-                Friens
+                Brakes
               </p>
             </button>
           </div>
           {/* middle */}
-          <div className="w-24 md:w-44 h-20 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xs md:text-base whitespace-nowrap font-semibold">
+          <div className="w-24 md:w-44 h-10 md:h-20 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xs md:text-base whitespace-nowrap font-semibold">
             <WheelCarrosal setActiveIndex={setActiveIndex} slides={title} />
           </div>
         </div>

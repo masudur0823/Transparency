@@ -17,12 +17,12 @@ const Accordion = ({ items }) => {
           key={index}
         >
           <div className="flex justify-between py-2 md:py-5" onClick={() => toggleAccordion(index)}>
-            <h3 className='text-base md:text-xl font-semibold select-none'>{item.title}</h3>
+            <h3 className='text-base md:text-xl font-semibold select-none'>{item.question}</h3>
             {activeIndex !== index ? <img src={plus} alt="" /> : <img src={minus} alt="" />}
           </div>
           {activeIndex === index && (
             <div className="pb-5 md:pb-10">
-              <p>{item.content}</p>
+              <p>{item.answer}</p>
             </div>
           )}
         </div>
