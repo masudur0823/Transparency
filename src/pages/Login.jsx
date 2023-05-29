@@ -12,27 +12,27 @@ function Login() {
             <div className="p-5 md:p-10">
               <img src={logo} className="m-auto" alt="" />
               <div className="mt-8">
-                <p className="text-center">Connexion</p>
+                <p className="text-center">Connection</p>
                 <TextField placeholder="Email" fullwidth loginBorder login />
-                <TextField placeholder="Mot de passe" fullwidth loginBorder login />
+                <TextField placeholder="Password" fullwidth loginBorder login />
                 <div className="mt-7 mb-2">
-                  <Button text="ME CONNECTER" fullwidth login />
+                  <Button text="Sign In" fullwidth login />
                 </div>
                 <a href="#!" className="text-my_orange font-medium">
-                  Mot de passe outbilé?
+                  Forgot password ?
                 </a>
               </div>
             </div>
             <hr className="border border-my_grey7" />
             <div className="px-5 md:px-10 pt-5 pb-5 md:pb-10">
               <p className="mb-4">
-                Je suis nouveau{" "}
+                I am new{" "}
                 <a href="#!" className="text-my_orange font-medium">
-                  Creer un compte
+                  Create an account
                 </a>{" "}
               </p>
               <button className="px-12 py-3 bg-white text-yellow rounded-md font-semibold w-full whitespace-normal sm:whitespace-nowrap">
-                Je suis un professionel
+                I am a professional
               </button>
             </div>
           </div>

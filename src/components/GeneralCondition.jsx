@@ -5,23 +5,62 @@ import img4 from "../assets/images/racing.png";
 import img5 from "../assets/images/seat.png";
 import img6 from "../assets/images/tires.png";
 import img7 from "../assets/images/brake-disc.png";
+import infoIcon from "../assets/images/icons/infocircle.svg";
 import Button from "./Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import WheelCarrosal from "./WheelCarrosal";
+import {
+  motorList,
+  motorListDesc,
+  outsideList,
+  outsideDesc,
+  tiresList,
+  tiresDesc
+} from "../data/GeneralConditions";
+
 function GeneralCondition() {
-  const [value, setValue] = useState("");
-  const [activeText, setActiveText] = useState("Monteur");
+  // slides active index
+  const [activeIndex, setActiveIndex] = useState(null);
+  // slides active index
+  const [activeText, setActiveText] = useState("Motor");
+  const [title, setTitle] = useState([]);
+  const [desc, setDesc] = useState([]);
 
   const handleClick = (text) => {
     setActiveText(activeText === text ? null : text);
-    setValue(text);
   };
 
+  useEffect(() => {
+    if (activeText === "Motor") {
+      setTitle(motorList);
+      setDesc(motorListDesc);
+    }
+    if (activeText === "Outside") {
+      setTitle(outsideList);
+      setDesc(outsideDesc);
+    }
+    if (activeText === "Tires") {
+      setTitle(tiresList);
+      setDesc(tiresDesc);
+    }
+  }, [activeText]);
+
   const handleSubmit = () => {
-    alert(value);
+    alert(activeText);
   };
+
   return (
     <>
-      <div className=" p-4 bg-white mt-8 rounded-lg">
+      <div className=" p-4 bg-white mt-8 rounded-lg relative">
+        {/* quick Tip */}
+        <div className="p-3 bg-my_grey2 w-44 my-5 lg:my-0 rounded-lg z-10 static lg:absolute top-10 right-10 mx-auto">
+          <p className="font-semibold flex gap-2">
+            <img src={infoIcon} alt="" /> Quick Tip
+          </p>
+          <p className="text-my_light_text text-sm mt-2">
+            <QuicTipDescription descList={desc} activeIndex={activeIndex} />
+          </p>
+        </div>
         <div className="w-60 md:w-120 h-60 md:h-120 rounded-full border border-dashed mx-auto m-10 relative">
           <div className="absolute -top-7 md:-top-10 left-1/2 -translate-x-1/2">
             <button
@@ -32,19 +71,29 @@ function GeneralCondition() {
               onClick={() => handleClick("Suspension")}
             >
               <img className="m-auto w-1/2 md:w-auto" src={img1} alt="" />
-              <p className={`font-medium text-xs md:text-base ${activeText === "Suspension" ? "border-s-4  border-yellow" : ""} ps-2`}>Suspension</p>
+              <p
+                className={`font-medium text-xs md:text-base ${
+                  activeText === "Suspension" ? "border-s-4  border-yellow" : ""
+                } ps-2`}
+              >
+                Suspension
+              </p>
             </button>
           </div>
           <div className="absolute top-[10%] md:top-[18%] -left-2 md:-left-6">
             <button
-              disabled={activeText === "Monteur" ? true : false}
-              className={
-                activeText === "Monteur" ? "opacity-100" : "opacity-30"
-              }
-              onClick={() => handleClick("Monteur")}
+              disabled={activeText === "Motor" ? true : false}
+              className={activeText === "Motor" ? "opacity-100" : "opacity-30"}
+              onClick={() => handleClick("Motor")}
             >
               <img className="m-auto w-1/2 md:w-auto" src={img2} alt="" />
-              <p className={`font-medium text-xs md:text-base ${activeText === "Monteur" ? "border-s-4  border-yellow" : ""} ps-2`}>Monteur</p>
+              <p
+                className={`font-medium text-xs md:text-base ${
+                  activeText === "Motor" ? "border-s-4  border-yellow" : ""
+                } ps-2`}
+              >
+                Motor
+              </p>
             </button>
           </div>
           <div className="absolute top-[10%] md:top-[18%] -right-2 md:-right-6">
@@ -56,19 +105,33 @@ function GeneralCondition() {
               onClick={() => handleClick("Transmission")}
             >
               <img className="m-auto w-1/2 md:w-auto" src={img3} alt="" />
-              <p className={`font-medium text-xs md:text-base ${activeText === "Transmission" ? "border-s-4  border-yellow" : ""} ps-2`}>Transmission</p>
+              <p
+                className={`font-medium text-xs md:text-base ${
+                  activeText === "Transmission"
+                    ? "border-s-4  border-yellow"
+                    : ""
+                } ps-2`}
+              >
+                Transmission
+              </p>
             </button>
           </div>
           <div className="absolute top-[50%] -left-6 md:-left-10">
             <button
-              disabled={activeText === "Exterieur" ? true : false}
+              disabled={activeText === "Outside" ? true : false}
               className={
-                activeText === "Exterieur" ? "opacity-100" : "opacity-30"
+                activeText === "Outside" ? "opacity-100" : "opacity-30"
               }
-              onClick={() => handleClick("Exterieur")}
+              onClick={() => handleClick("Outside")}
             >
               <img className="m-auto w-1/2 md:w-auto" src={img4} alt="" />
-              <p className={`font-medium text-xs md:text-base ${activeText === "Exterieur" ? "border-s-4  border-yellow" : ""} ps-2`}>Exterieur</p>
+              <p
+                className={`font-medium text-xs md:text-base ${
+                  activeText === "Outside" ? "border-s-4  border-yellow" : ""
+                } ps-2`}
+              >
+                Outside
+              </p>
             </button>
           </div>
           <div className="absolute top-[50%] -right-6 md:-right-10">
@@ -80,41 +143,50 @@ function GeneralCondition() {
               onClick={() => handleClick("Interieur")}
             >
               <img className="m-auto w-1/2 md:w-auto" src={img5} alt="" />
-              <p className={`font-medium text-xs md:text-base ${activeText === "Interieur" ? "border-s-4  border-yellow" : ""} ps-2`}>Interieur</p>
+              <p
+                className={`font-medium text-xs md:text-base ${
+                  activeText === "Interieur" ? "border-s-4  border-yellow" : ""
+                } ps-2`}
+              >
+                Interieur
+              </p>
             </button>
           </div>
           <div className="absolute top-[80%] left-5 md:left-10">
             <button
-              disabled={activeText === "Pneus" ? true : false}
-              className={
-                activeText === "Pneus" ? "opacity-100" : "opacity-30"
-              }
-              onClick={() => handleClick("Pneus")}
+              disabled={activeText === "Tires" ? true : false}
+              className={activeText === "Tires" ? "opacity-100" : "opacity-30"}
+              onClick={() => handleClick("Tires")}
             >
               <img className="m-auto w-1/2 md:w-auto" src={img6} alt="" />
-              <p className={`font-medium text-xs md:text-base ${activeText === "Pneus" ? "border-s-4  border-yellow" : ""} ps-2`}>Pneus</p>
+              <p
+                className={`font-medium text-xs md:text-base ${
+                  activeText === "Tires" ? "border-s-4  border-yellow" : ""
+                } ps-2`}
+              >
+                Tires
+              </p>
             </button>
           </div>
           <div className="absolute top-[80%] right-5 md:right-10">
             <button
               disabled={activeText === "Friens" ? true : false}
-              className={
-                activeText === "Friens" ? "opacity-100" : "opacity-30"
-              }
+              className={activeText === "Friens" ? "opacity-100" : "opacity-30"}
               onClick={() => handleClick("Friens")}
             >
               <img className="m-auto w-1/2 md:w-auto" src={img7} alt="" />
-              <p className={`font-medium text-xs md:text-base ${activeText === "Friens" ? "border-s-4  border-yellow" : ""} ps-2`}>Friens</p>
+              <p
+                className={`font-medium text-xs md:text-base ${
+                  activeText === "Friens" ? "border-s-4  border-yellow" : ""
+                } ps-2`}
+              >
+                Friens
+              </p>
             </button>
           </div>
           {/* middle */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xs md:text-base whitespace-nowrap font-semibold">
-            <p className="text-my_grey4">Vibration</p>
-            <p className="flex items-center gap-2">
-              Demarrage Facile{" "}
-              <div className="w-4 h-4 bg-yellow rounded-full outline outline-2 outline-black border-2 border-white"></div>
-            </p>
-            <p className="text-my_grey4">Fume</p>
+          <div className="w-24 md:w-44 h-20 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xs md:text-base whitespace-nowrap font-semibold">
+            <WheelCarrosal setActiveIndex={setActiveIndex} slides={title} />
           </div>
         </div>
       </div>
@@ -126,3 +198,15 @@ function GeneralCondition() {
 }
 
 export default GeneralCondition;
+
+function QuicTipDescription({ descList, activeIndex }) {
+  return (
+    <>
+      {descList.map((item, index) => {
+        if (activeIndex === index) {
+          return <p key={index}>{item}</p>;
+        }
+      })}
+    </>
+  );
+}

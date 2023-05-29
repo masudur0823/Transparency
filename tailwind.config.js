@@ -28,12 +28,16 @@ export default {
         my_light_text:"#777777",
       },
       height:{
+        "18":"4.5rem",
         "120":"30rem",
         "122":"32rem"
       },
       width:{
         "120":"30rem",
         "19/20": "95%"
+      },
+      fontSize: {
+        my_xs:'0.5rem'
       }
     },
   },

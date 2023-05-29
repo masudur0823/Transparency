@@ -81,3 +81,11 @@
 } */
 /* ------------------------------- */
 /* banner css end here */
+
+.swiper-slide.swiper-slide-prev{
+    color: #C2C2C2 !important;
+}
+
+.swiper-slide.swiper-slide-next{
+    color: #C2C2C2 !important;
+}
