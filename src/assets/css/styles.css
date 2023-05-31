@@ -68,19 +68,6 @@
 /* ------------------------------- */
 /* phone input css end here */
 
-/* banner css start here */
-/* ------------------------------- */
-/* .banner_main{
-    background-image: linear-gradient(99.9deg, #737270 4.3%, rgba(81, 75, 22, 0.1) 111.37%),url("../images/why_choose_banner.jpeg");
-    height: 500px;
-    mix-blend-mode: multiply;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode: multiply;
-} */
-/* ------------------------------- */
-/* banner css end here */
 
 .swiper-slide.swiper-slide-prev{
     color: #C2C2C2 !important;
@@ -89,3 +76,4 @@
 .swiper-slide.swiper-slide-next{
     color: #C2C2C2 !important;
 }
+

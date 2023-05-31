@@ -7,6 +7,7 @@ import img6 from "../assets/images/tires.png";
 import img7 from "../assets/images/brake-disc.png";
 import infoIcon from "../assets/images/icons/infocircle.svg";
 import Button from "./Button";
+import btnIcon from "../assets/images/form_icons/edit2.svg"
 import { useEffect, useState } from "react";
 import WheelCarrosal from "./WheelCarrosal";
 import {
@@ -215,7 +216,7 @@ function GeneralCondition() {
         </div>
       </div>
       <div className="mt-3 md:mt-8">
-        <Button text="Launch" onClick={handleSubmit} />
+        <Button rounded labelIcon={btnIcon} text="Launch" onClick={handleSubmit} />
       </div>
     </>
   );

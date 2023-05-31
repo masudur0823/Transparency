@@ -176,7 +176,7 @@ export default function Home() {
           <div
             className={
               activeIndex1 === 2
-                ? "block p-4 bg-white mt-8 rounded-lg"
+                ? "block p-4  mt-8 rounded-lg"
                 : "hidden"
             }
           >

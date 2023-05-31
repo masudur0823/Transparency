@@ -11,10 +11,13 @@ import Nombredep from "../assets/images/form_icons/Nombre de place(s).svg";
 import Puissance from "../assets/images/form_icons/Puissance fiscale.svg";
 import Permis from "../assets/images/form_icons/Permis.svg";
 import Critair from "../assets/images/form_icons/Crit’air.svg";
+import { BsFillQuestionCircleFill } from "react-icons/bs";
 import Select from "./input/Select";
 import { useState } from "react";
 import Button from "./Button";
 import { colors, epaList, FuelTypeList } from "../data/CharacteristicsDataset";
+import SelectColor from "./Select/SelectColor";
+import btnIcon from "../assets/images/form_icons/edit2.svg"
 
 function CharacteristicsValues() {
   const [brand, setBrand] = useState("");
@@ -67,13 +70,13 @@ function CharacteristicsValues() {
           <option value="2013">2013</option>
         </Select>
         <TextField
-          type="text"
+          type="number"
           icon={date}
           label="First registered"
           placeholder="MM/Year"
         />
         <TextField
-          type="text"
+          type="number"
           icon={Kilometrage}
           label="Mileage"
           placeholder="miles"
@@ -111,18 +114,13 @@ function CharacteristicsValues() {
           <option value="6">six</option>
           <option value="7">seven</option>
         </Select>
-        <Select
-          icon={Couleur}
-          value={color}
-          onChange={(e) => setColor(e.target.value)}
+        <SelectColor
           label="Color"
-        >
-          {colors.map((item, index) => (
-            <option key={index} value={item}>
-              {item}
-            </option>
-          ))}
-        </Select>
+          icon={Couleur}
+          state={color}
+          setState={setColor}
+          data={colors}
+        />
         <Select
           icon={Nombre}
           value={doorNumber}
@@ -142,6 +140,7 @@ function CharacteristicsValues() {
           onChange={(e) => setSeatsNumber(e.target.value)}
           label="Number of seats"
         >
+          <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
           <option value="5">5</option>
@@ -150,38 +149,41 @@ function CharacteristicsValues() {
           <option value="more">More</option>
         </Select>
         <TextField
-          type="text"
+          type="number"
           icon={Puissance}
           label="Engine size"
           placeholder="L"
         />
         <TextField
-          type="text"
+          type="number"
           icon={Puissance}
           label="Engine Power"
           placeholder="bhp"
         />
         <Select
+          labelIcon={<BsFillQuestionCircleFill />}
           icon={Permis}
+          epaList={epaList}
           value={epa}
           onChange={(e) => setEpa(e.target.value)}
           label="EPA Ratings (Env. Protection Agency )"
+          epa
         >
           {epaList.map((item, index) => (
             <option key={index} value={`${item.title}: ${item.desc}`}>
-              {item.title}: {item.desc}
+              {item.title}
             </option>
           ))}
         </Select>
         <TextField
-          type="text"
+          type="number"
           icon={Critair}
           label="CO2 emissions"
           placeholder="g/km"
         />
       </div>
       <div className="mt-3 md:mt-8">
-        <Button text="Launch" onClick={handleSubmit} />
+        <Button rounded labelIcon={btnIcon} text="Launch" onClick={handleSubmit} />
       </div>
     </div>
   );
