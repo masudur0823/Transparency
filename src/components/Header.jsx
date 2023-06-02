@@ -3,11 +3,20 @@ import Navigation from "./Navigation";
 import people from "../assets/images/icons/people.svg";
 import SelectLanguage from "./Select/SelectLanguage";
 import { HiMenuAlt1 } from "react-icons/hi";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
+  const ref = useRef(null);
   const [show, setShow] = useState("-1000px");
+
+  useEffect(() => {
+    document.addEventListener("mousedown", (event) => {
+      if (!ref.current || !ref.current.contains(event.target)) {
+        setShow("-1000px");
+      }
+    });
+  }, []);
 
   const handleMenu = () => {
     if (show === "-1000px") {
@@ -23,6 +32,7 @@ export default function Header() {
           </Link>
           <div className="flex justify-between w-48 md:w-full ">
             <div
+            ref={ref}
               style={{ top: show }}
               className={`z-50 block md:hidden absolute md:relative right-4 md:right-0 top-11 md:top-0 bg-white md:bg-none shadow md:shadow-none p-3 md:p-0 rounded`}
             >

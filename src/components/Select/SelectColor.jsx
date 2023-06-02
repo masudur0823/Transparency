@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from "react";
-import { MdKeyboardArrowDown } from 'react-icons/md';
+import { useEffect, useState } from "react";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import OutsideDetect from "../../utils/OutsideDetect";
 
-export default function SelectColor({ label, icon,state, setState, data }) {
-  const ref = useRef(null);
-    const [showMenu, setShowMenu] = useState("hidden");
+export default function SelectColor({ label, icon, state, setState, data }) {
+  const [showMenu, setShowMenu] = useState("hidden");
   const handleClick = () => {
     if (showMenu === "hidden") {
       setShowMenu("block");
@@ -12,17 +12,9 @@ export default function SelectColor({ label, icon,state, setState, data }) {
     }
   };
   useEffect(() => {
-    setState('Black')
-  }, [])
-
-  useEffect(() => {
-    document.addEventListener("mousedown", (event) => {
-      if (!ref.current || !ref.current.contains(event.target)) {
-        setShowMenu('hidden')
-      }
-    });
+    setState("Black");
   }, []);
-  
+
   return (
     <div className="flex items-center gap-5">
       <div className="h-7 md:h-10 w-7 md:w-10 bg-my_grey2 flex justify-center items-center rounded-full p-2 md:p-2.5">
@@ -32,17 +24,29 @@ export default function SelectColor({ label, icon,state, setState, data }) {
         <label htmlFor={label} className="text-my_light_text text-sm">
           {label}
         </label>
-        <div ref={ref} className="relative text-my_black font-semibold w-44 cursor-pointer flex justify-between items-center" onClick={handleClick}>
-          <div className="">{state}</div>
-          <MdKeyboardArrowDown/>
-          <div className={`top-7 left-0 absolute shadow-md ${showMenu} bg-white h-44 w-44 overflow-y-scroll customSelect`}>
-            {data.map((item, index) => (
-              <div key={index} onClick={() => setState(item)} className="py-1 px-2 cursor-pointer hover:bg-blue-600 hover:text-white">
-                {item}
-              </div>
-            ))}
+        <OutsideDetect setShow={setShowMenu}>
+          <div
+            className="relative text-my_black font-semibold w-44 cursor-pointer flex justify-between items-center"
+            onClick={handleClick}
+          >
+            <div className="">{state}</div>
+            <MdKeyboardArrowDown />
+
+            <div
+              className={`top-7 left-0 absolute shadow-md ${showMenu} bg-white h-44 w-44 overflow-y-scroll customSelect`}
+            >
+              {data.map((item, index) => (
+                <div
+                  key={index}
+                  onClick={() => setState(item)}
+                  className="py-1 px-2 cursor-pointer hover:bg-blue-600 hover:text-white"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </OutsideDetect>
       </div>
     </div>
   );
